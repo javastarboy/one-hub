@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Avatar, Box, ButtonBase } from '@mui/material';
+import { Avatar, Box, ButtonBase, Button } from '@mui/material';
 
 // project imports
 import LogoSection from '../LogoSection';
@@ -17,6 +19,7 @@ import { IconMenu2 } from '@tabler/icons-react';
 
 const Header = ({ handleLeftDrawerToggle }) => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -56,6 +59,13 @@ const Header = ({ handleLeftDrawerToggle }) => {
 
       <Box sx={{ flexGrow: 1 }} />
       <Box sx={{ flexGrow: 1 }} />
+      {/* Add Home and About buttons */}
+      <Button component={Link} to="/" color="inherit">
+        {t('menu.home')}
+      </Button>
+      <Button component={Link} to="/about" color="inherit">
+        {t('menu.about')}
+      </Button>
       <ThemeButton />
       <I18nButton />
       <ProfileSection />
