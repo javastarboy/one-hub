@@ -128,7 +128,7 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api) 和 [one-h
 如果您觉得对您有所帮助，欢迎您的赞助。您的支持将使我有更多的动力继续维护和改进这个项目。
 您可以通过扫描下面的二维码来请我喝杯咖啡：
 
-<p align="center">
+<p align="left">
    <picture>
    <img height="400" src="https://lobechat2vercel.oss-cn-beijing.aliyuncs.com/prod/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.jpeg">
    </picture>
