@@ -120,9 +120,22 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api) 和 [one-h
 
 感谢以上项目的作者和贡献者
 
-## 交流群
+## 交流群（找到@AGI舰长）
 
 <img src="https://lobechat2vercel.oss-cn-beijing.aliyuncs.com/prod/%E5%BE%AE%E4%BF%A1%E4%BA%A4%E6%B5%81%E7%BE%A4.png" width="300">
+
+## 请我喝咖啡
+如果您觉得对您有所帮助，欢迎您的赞助。您的支持将使我有更多的动力继续维护和改进这个项目。
+您可以通过扫描下面的二维码来请我喝杯咖啡：
+
+<p align="center">
+   <picture>
+   <img height="400" src="https://lobechat2vercel.oss-cn-beijing.aliyuncs.com/prod/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.jpeg">
+   </picture>
+   <picture>
+   <img height="400" src="https://lobechat2vercel.oss-cn-beijing.aliyuncs.com/prod/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.jpeg">
+   </picture>
+</p>
 
 ## 其他
 
