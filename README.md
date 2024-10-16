@@ -72,7 +72,14 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api)二次开�
 
 ## 文档
 
-请查看[文档](https://github.com/MartialBE/one-hub/wiki)
+请查看[文档](https://github.com/javastarboy/one-hub/wiki)
+- [部署](https://github.com/javastarboy/one-hub/wiki/%E9%83%A8%E7%BD%B2)
+- [Docker自动更新容器](https://github.com/javastarboy/one-hub/wiki/Docker-%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%AE%B9%E5%99%A8)
+- [环境变量](https://github.com/javastarboy/one-hub/wiki/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
+- [命令行参数](https://github.com/javastarboy/one-hub/wiki/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0)
+- [使用方法](https://github.com/javastarboy/one-hub/wiki/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)
+- [消息推送配置](https://github.com/javastarboy/one-hub/wiki/%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5%E9%85%8D%E7%BD%AE)
+- [常见问题](https://github.com/javastarboy/one-hub/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
 
 ## 当前支持的供应商
 
@@ -116,7 +123,7 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api)二次开�
 
 ## 交流群
 
-<img src="https://github.com/MartialBE/one-hub/assets/42402987/9b608d39-70ae-4b2e-be49-09afab6bd536" width="300">
+<img src="https://lobechat2vercel.oss-cn-beijing.aliyuncs.com/prod/%E5%BE%AE%E4%BF%A1%E4%BA%A4%E6%B5%81%E7%BE%A4.png" width="300">
 
 ## 其他
 
