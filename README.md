@@ -39,7 +39,7 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api)二次开�
 
 **如果发现缺少新模型，请在`后台-模型价格-更新价格`中更新新增的模型**
 
-[演示网站](https://one-api-martialbe.vercel.app/)
+[one-hub 作者演示网站](https://one-api-martialbe.vercel.app/) | [本周作者网站](https://javastarboy.com.cn/)
 
 </div>
 
