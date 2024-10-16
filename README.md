@@ -11,6 +11,10 @@
 
 <div align="center">
 
+<div align="center">
+   [AI聚合网站](https://javastarboy.com.cn/) | [AI大模型全栈通识教程](https://www.yuque.com/lhyyh/agi/introduce/) | [我的花园](https://www.yuque.com/lhyyh/ai/)
+</div>
+
 # One Hub
 
 _本项目是基于[one-api](https://github.com/songquanpeng/one-api) 和 [one-hub](https://github.com/MartialBE/one-hub)二次开发而来的_
