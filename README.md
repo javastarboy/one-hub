@@ -13,7 +13,7 @@
 
 # One Hub
 
-_本项目是基于[one-api](https://github.com/songquanpeng/one-api)二次开发而来的_
+_本项目是基于[one-api](https://github.com/songquanpeng/one-api) 和 [one-hub](https://github.com/MartialBE/one-hub)二次开发而来的_
 
 <p align="center">
   <a href="https://raw.githubusercontent.com/MartialBE/one-api/main/LICENSE">
