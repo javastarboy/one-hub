@@ -145,3 +145,10 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api) 和 [one-h
     <img alt="Star History of MartialBE/one-api" src="https://next.ossinsight.io/widgets/official/analyze-repo-stars-history/thumbnail.png?repo_id=689214770&image_size=auto&color_scheme=light" width="721" height="auto">
   </picture>
 </a>
+
+
+<div align="center">
+   [AI聚合网站](https://javastarboy.com.cn) | [AI大模型全栈通识教程](https://www.yuque.com/lhyyh/agi/introduce) | [我的花园](https://www.yuque.com/lhyyh/ai)
+</div>
+
+
