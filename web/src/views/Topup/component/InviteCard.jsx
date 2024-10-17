@@ -1,7 +1,8 @@
 import { Stack, Typography, Container, Box, OutlinedInput, InputAdornment, Button } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import SubCard from 'ui-component/cards/SubCard';
-import inviteImage from 'assets/images/invite/cwok_casual_19.webp';
+// import inviteImage from 'assets/images/invite/cwok_casual_19.webp';
+import inviteImage from 'assets/images/contact_us.png';
 import { useState } from 'react';
 import { API } from 'utils/api';
 import { showError, copy } from 'utils/common';
@@ -40,7 +41,7 @@ const InviteCard = () => {
           background: theme.palette.primary.dark
         }}
       >
-        <Stack justifyContent="center" alignItems={'flex-start'} padding={'40px 24px 0px'} spacing={3}>
+        <Stack justifyContent="center" alignItems={'flex-start'} padding={'20px 24px 20px'} spacing={3}>
           <Container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <img src={inviteImage} alt="invite" width={'250px'} />
           </Container>

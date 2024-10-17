@@ -39,7 +39,7 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api) 和 [one-h
 
 **如果发现缺少新模型，请在`后台-模型价格-更新价格`中更新新增的模型**
 
-[one-hub 作者演示网站](https://one-api-martialbe.vercel.app/) | [本周作者网站](https://javastarboy.com.cn/)
+[one-hub 作者演示网站](https://one-api-martialbe.vercel.app/) | [本站作者网站](https://javastarboy.com.cn/)
 
 </div>
 
@@ -120,22 +120,48 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api) 和 [one-h
 
 感谢以上项目的作者和贡献者
 
-## 交流群（找到@AGI舰长）
+## 联系我们（@AGI舰长，备注：new-hub）
 
-<img src="https://lobechat2vercel.oss-cn-beijing.aliyuncs.com/prod/%E5%BE%AE%E4%BF%A1%E4%BA%A4%E6%B5%81%E7%BE%A4.png" width="300">
+<table>
+  <tr>
+    <td align="center">
+      <picture>
+        <img height="300" src="/web/src/assets/images/contact_us.png">
+      </picture>
+      <br/>
+      （微信号）
+    </td>
+    <td align="center">
+      <picture>
+        <img height="300" src="https://lobechat2vercel.oss-cn-beijing.aliyuncs.com/prod/%E5%BE%AE%E4%BF%A1%E4%BA%A4%E6%B5%81%E7%BE%A4.png">
+      </picture>
+      <br/>
+      （AI全栈交流群）
+    </td>
+  </tr>
+</table>
 
 ## 请我喝咖啡
 如果您觉得对您有所帮助，欢迎您的赞助。您的支持将使我有更多的动力继续维护和改进这个项目。
 您可以通过扫描下面的二维码来请我喝杯咖啡：
 
-<p align="left">
-   <picture>
-   <img height="400" src="https://lobechat2vercel.oss-cn-beijing.aliyuncs.com/prod/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.jpeg">
-   </picture>
-   <picture>
-   <img height="400" src="https://lobechat2vercel.oss-cn-beijing.aliyuncs.com/prod/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.jpeg">
-   </picture>
-</p>
+
+<table>
+  <tr>
+    <td align="center">
+      <picture>
+        <img height="400" src="https://lobechat2vercel.oss-cn-beijing.aliyuncs.com/prod/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.jpeg">
+      </picture>
+    </td>
+    <td align="center">
+      <picture>
+        <img height="400" src="https://lobechat2vercel.oss-cn-beijing.aliyuncs.com/prod/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.jpeg">
+      </picture>
+
+    </td>
+  </tr>
+</table>
+
 
 ## 其他
 <a href="https://next.ossinsight.io/widgets/official/analyze-repo-stars-history?repo_id=689214770" target="_blank" style="display: block" align="center">
