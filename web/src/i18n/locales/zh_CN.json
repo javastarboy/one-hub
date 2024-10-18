@@ -242,7 +242,7 @@
     "topupsuccess": "充值成功！",
     "amount": "充值金额",
     "currentQuota": "当前额度",
-    "onlineTopup": "在线充值",
+    "onlineTopup": "在线充值 【不同额度均有不同“折扣”，也可以往下滑“获取兑换码”方式充值！】",
     "inputLabel": "兑换码",
     "inputPlaceholder": "请输入兑换码！",
     "exchangeButton": {

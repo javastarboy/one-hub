@@ -208,31 +208,36 @@ const TopupCard = () => {
       {payment.length > 0 && (
         <SubCard
           sx={{
-            marginTop: '40px'
+            marginTop: '20px'
           }}
           title={t('topupCard.onlineTopup')}
         >
-          <Stack spacing={2}>
+          {/* 在线充值按钮布局调整为横向 */}
+          <Grid container spacing={2}>
             {payment.map((item, index) => (
-              <AnimateButton key={index}>
-                <Button
-                  disableElevation
-                  fullWidth
-                  size="large"
-                  variant="outlined"
-                  onClick={() => handlePaymentSelect(item)}
-                  sx={{
-                    ...theme.typography.LoginButton,
-                    border: selectedPayment === item ? `1px solid ${theme.palette.primary.main}` : '1px solid transparent'
-                  }}
-                >
-                  <Box sx={{ mr: { xs: 1, sm: 2, width: 20 }, display: 'flex', alignItems: 'center' }}>
-                    <img src={item.icon} alt="github" width={25} height={25} style={{ marginRight: matchDownSM ? 8 : 16 }} />
-                  </Box>
-                  {item.name}
-                </Button>
-              </AnimateButton>
+               <Grid item xs={12} sm={payment.length === 1 ? 12 : payment.length === 2 ? 6 : 4} key={index}>
+                <AnimateButton key={index}>
+                  <Button
+                    disableElevation
+                    fullWidth
+                    size="large"
+                    variant="outlined"
+                    onClick={() => handlePaymentSelect(item)}
+                    sx={{
+                      ...theme.typography.LoginButton,
+                      border: selectedPayment === item ? `2px solid ${theme.palette.primary.main}` : '1px solid transparent'
+                    }}
+                  >
+                    <Box sx={{ mr: { xs: 1, sm: 2, width: 20 }, display: 'flex', alignItems: 'center' }}>
+                      <img src={item.icon} alt="github" width={25} height={25} style={{ marginRight: matchDownSM ? 8 : 16 }} />
+                    </Box>
+                    {item.name}
+                  </Button>                
+                </AnimateButton>
+              </Grid>
             ))}
+          </Grid>
+          <Stack spacing={2}>
             <Grid container spacing={2}>
               {Object.entries(RechargeDiscount).map(([key, value]) => (
                 <Grid item key={key}>
