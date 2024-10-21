@@ -45,7 +45,7 @@
     "alreadyHaveAccount": "已经有帐号了?点击登录"
   },
   "dashboard_index": {
-    "model_price": "当前可用模型",
+    "model_price": "点我查看可用模型（若看不到可用模型请联系管理员：LHYYH0001）",
     "today_requests": "今日请求",
     "today_consumption": "今日消费",
     "today_tokens": "今日Token",
@@ -242,7 +242,7 @@
     "topupsuccess": "充值成功！",
     "amount": "充值金额",
     "currentQuota": "当前额度",
-    "onlineTopup": "在线充值 【不同额度均有不同“折扣”，也可以往下滑“获取兑换码”方式充值！】",
+    "onlineTopup": "在线充值 【汇率低至 1:1，充值满 200 升级VIP，资费更低！也可以往下滑“获取兑换码”方式充值！】",
     "inputLabel": "兑换码",
     "inputPlaceholder": "请输入兑换码！",
     "exchangeButton": {
