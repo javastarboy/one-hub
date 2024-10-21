@@ -241,7 +241,7 @@
     "topup": "充值",
     "topupsuccess": "充值成功！",
     "amount": "充值金额",
-    "currentQuota": "当前额度",
+    "currentQuota": "当前额度（最后一次充值起有效期180天）",
     "onlineTopup": "在线充值 【汇率低至 1:1，充值满 200 升级VIP，资费更低！也可以往下滑“获取兑换码”方式充值！】",
     "inputLabel": "兑换码",
     "inputPlaceholder": "请输入兑换码！",
