@@ -126,7 +126,7 @@ _本项目是基于[one-api](https://github.com/songquanpeng/one-api) 和 [one-h
   <tr>
     <td align="center">
       <picture>
-        <img height="300" src="/web/src/assets/images/contact_us.png">
+        <img height="300" src="https://oss.javastarboy.com/agi/%E4%B8%AA%E4%BA%BA%E4%BC%81%E5%BE%AE%E4%BA%8C%E7%BB%B4%E7%A0%81.png">
       </picture>
       <br/>
       （微信号）
