@@ -58,6 +58,14 @@ const BaseIndex = () => {
                 AI大模型全栈通识教程
               </Button>
               <Button
+                startIcon={<Class />}
+                variant="contained"
+                href="https://www.yuque.com/lhyyh/ai/tool" target='_blank'
+                sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
+              >
+                使用手册
+              </Button>
+              <Button
                 startIcon={<AddToHomeScreen />}
                 variant="contained"
                 href="/login"
