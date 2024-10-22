@@ -772,7 +772,7 @@
     "useOIDCLogin": "使用 OIDC 登录",
     "useLarkLogin": "使用飞书登录"
   },
-  "description": "All in one 的 OpenAI 接口\n整合各种 API 访问方式\n一键部署，开箱即用",
+  "description": "All in one 的 AI 聚合平台，整合各种大模型 API，开箱即用！",
   "about": {
     "loadingError": "加载关于内容失败...",
     "aboutTitle": "关于",
