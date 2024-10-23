@@ -39,6 +39,9 @@ const BaseIndex = () => {
                 </ul>
               </Typography>
             </Grid>
+            <Typography variant="h4" sx={{ fontSize: '1.5rem', color: '#ffff00', lineHeight: 1.5 }}>
+                {t('携手AGI舰队，遨游AI宇宙，汇聚万象星河，让 AI 九九归一！')}
+            </Typography>
             <br></br>
             <Stack spacing={3} direction="row">
               <Button
