@@ -45,27 +45,18 @@ const BaseIndex = () => {
             <br></br>
             <Stack spacing={3} direction="row">
               <Button
-                startIcon={<Link />}
-                variant="contained"
-                href="https://www.yuque.com/lhyyh/ai/conactus" target='_blank'
-                sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
-              >
-                联系我们
-              </Button>
-              <Button
-                startIcon={<Class />}
-                variant="contained"
-                href="https://www.yuque.com/lhyyh/agi/introduce" target='_blank'
-                sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
-              >
-                AI大模型全栈通识教程
+                  startIcon={<Link />}
+                  variant="contained"
+                  href="https://www.yuque.com/lhyyh/ai/conactus" target='_blank'
+                  sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
+                >
+                  联系我们
               </Button>
               <Button
                 startIcon={<Class />}
                 variant="contained"
                 href="https://www.yuque.com/lhyyh/ai/tool" target='_blank'
-                sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
-              >
+                sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}>
                 使用手册
               </Button>
               <Button
@@ -75,6 +66,25 @@ const BaseIndex = () => {
                 sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
               >
                 Let`s go 👉🏻
+              </Button>
+            </Stack>
+            <br></br>
+            <Stack spacing={3} direction="row">
+              <Button
+                  startIcon={<Class />}
+                  variant="contained"
+                  href="https://www.yuque.com/lhyyh/agi/introduce" target='_blank'
+                  sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
+                >
+                AI大模型全栈通识教程
+              </Button>
+              <Button
+                startIcon={<Class />}
+                variant="contained"
+                href="https://www.yuque.com/lhyyh/ai/ins6gx3o7hck7shb" target='_blank'
+                sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
+              >
+                AIGC证书
               </Button>
             </Stack>
           </Grid>
