@@ -21,7 +21,7 @@ const BaseIndex = () => {
           <Grid md={7} lg={6}>
             <Stack>
                 <Typography variant="h1" sx={{ fontSize: '4rem', color: '#fff', lineHeight: 1.5 }}>
-                领航 AGI
+                深渊智能AIGC
               </Typography>
               <Typography variant="h4" sx={{ fontSize: '1.5rem', color: '#fff', lineHeight: 1.5 }}>
                 {t('description')}
