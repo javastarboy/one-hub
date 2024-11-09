@@ -40,14 +40,14 @@ const BaseIndex = () => {
               </Typography>
             </Grid>
             <Typography variant="h4" sx={{ fontSize: '1.5rem', color: '#ffff00', lineHeight: 1.5 }}>
-                {t('携手AGI舰队，遨游AI宇宙，汇聚万象星河，让 AI 九九归一！')}
+                {t('携手深渊智能，遨游AI宇宙，汇聚万象星河，让 AI 九九归一！')}
             </Typography>
             <br></br>
             <Stack spacing={3} direction="row">
               <Button
                   startIcon={<Link />}
                   variant="contained"
-                  href="https://www.yuque.com/lhyyh/ai/conactus" target='_blank'
+                  href="https://syznaigc.com/weixin.jpg" target='_blank'
                   sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
                 >
                   联系我们
@@ -55,7 +55,7 @@ const BaseIndex = () => {
               <Button
                 startIcon={<Class />}
                 variant="contained"
-                href="https://www.yuque.com/lhyyh/ai/tool" target='_blank'
+                href="https://www.yuque.com/lhyyh/buhap1/wc9kqk22pitf49tk" target='_blank'
                 sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}>
                 使用手册
               </Button>
@@ -68,7 +68,7 @@ const BaseIndex = () => {
                 Let`s go 👉🏻
               </Button>
             </Stack>
-            <br></br>
+            {/* <br></br>
             <Stack spacing={3} direction="row">
               <Button
                   startIcon={<Class />}
@@ -86,7 +86,7 @@ const BaseIndex = () => {
               >
                 AIGC证书
               </Button>
-            </Stack>
+            </Stack> */}
           </Grid>
         </Grid>
       </Container>
