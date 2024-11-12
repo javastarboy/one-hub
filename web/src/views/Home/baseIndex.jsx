@@ -70,14 +70,14 @@ const BaseIndex = () => {
             </Stack>
             <br></br>
             <Stack spacing={3} direction="row">
-              {/* <Button
+              <Button
                   startIcon={<Class />}
                   variant="contained"
-                  href="https://www.yuque.com/lhyyh/agi/introduce" target='_blank'
+                  href="https://www.yuque.com/shenyuanzhinengaigc/atz69s/uwx2phtm700zboea" target='_blank'
                   sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
                 >
                 AI大模型全栈通识教程
-              </Button> */}
+              </Button>
               <Button
                 startIcon={<Class />}
                 variant="contained"
