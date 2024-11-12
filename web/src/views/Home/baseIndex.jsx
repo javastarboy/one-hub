@@ -47,7 +47,7 @@ const BaseIndex = () => {
               <Button
                   startIcon={<Link />}
                   variant="contained"
-                  href="https://syznaigc.com/weixin.jpg" target='_blank'
+                  href="https://www.yuque.com/shenyuanzhinengaigc/atz69s/connectus" target='_blank'
                   sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
                 >
                   联系我们
@@ -55,7 +55,7 @@ const BaseIndex = () => {
               <Button
                 startIcon={<Class />}
                 variant="contained"
-                href="https://www.yuque.com/lhyyh/buhap1/wc9kqk22pitf49tk" target='_blank'
+                href="https://www.yuque.com/shenyuanzhinengaigc/atz69s/ct8fcuprx9cgf6a4" target='_blank'
                 sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}>
                 使用手册
               </Button>
@@ -68,25 +68,25 @@ const BaseIndex = () => {
                 Let`s go 👉🏻
               </Button>
             </Stack>
-            {/* <br></br>
+            <br></br>
             <Stack spacing={3} direction="row">
-              <Button
+              {/* <Button
                   startIcon={<Class />}
                   variant="contained"
                   href="https://www.yuque.com/lhyyh/agi/introduce" target='_blank'
                   sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
                 >
                 AI大模型全栈通识教程
-              </Button>
+              </Button> */}
               <Button
                 startIcon={<Class />}
                 variant="contained"
-                href="https://www.yuque.com/lhyyh/ai/ins6gx3o7hck7shb" target='_blank'
+                href="https://www.yuque.com/shenyuanzhinengaigc/atz69s/rdx40dty7pkzx297" target='_blank'
                 sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
               >
                 AIGC证书
               </Button>
-            </Stack> */}
+            </Stack>
           </Grid>
         </Grid>
       </Container>
