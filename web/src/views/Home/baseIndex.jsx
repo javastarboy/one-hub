@@ -18,25 +18,20 @@ const BaseIndex = () => {
     >
       <Container maxWidth="lg">
         <Grid container columns={9} wrap="nowrap" alignItems="flex-start" sx={{ minHeight: 'calc(100vh - 230px)', paddingTop: '3vh' }}>
-          <Grid md={7} lg={6}>
+          <Grid md={7} lg={6} sx={{ marginLeft: '-5%' }}>
             <Stack>
                 <Typography variant="h1" sx={{ fontSize: '4rem', color: '#fff', lineHeight: 1.5 }}>
                 深渊智能AIGC
               </Typography>
-              <Typography variant="h4" sx={{ fontSize: '1.5rem', color: '#fff', lineHeight: 1.5 }}>
+              <Typography variant="h4" sx={{ fontSize: '1.5rem', color: '#fff', lineHeight: 1.5, marginBottom: '5vh' }}>
                 {t('description')}
               </Typography>
             </Stack>
-            <br></br>
-            <Typography variant="h4" sx={{ fontSize: '1.4rem', color: '#ffff00', lineHeight: 1.5 }}>
+            <Typography variant="h4" sx={{ fontSize: '1.4rem', color: '#ffff00', lineHeight: 1.5, marginBottom: '5vh' }}>
                 {t('携手深渊智能AIGC，聚合多种模型，驶入前沿科技，让AI助你一臂之力！')}
             </Typography>
-            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-            <br></br><br></br><br></br><br></br>
             
-            <Stack spacing={3} direction="row">
+            <Stack spacing={3} direction="row" sx={{ marginTop: '40vh' }}>
               <Button
                   startIcon={<Link />}
                   variant="contained"
@@ -61,7 +56,7 @@ const BaseIndex = () => {
                 Let`s go 👉🏻
               </Button>
             </Stack>
-            <br></br>
+            <br/><br/>
             <Stack spacing={3} direction="row">
               <Button
                   startIcon={<Class />}
