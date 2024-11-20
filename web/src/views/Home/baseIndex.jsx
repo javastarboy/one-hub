@@ -9,15 +9,15 @@ const BaseIndex = () => {
     <Box
       sx={{
         minHeight: 'calc(100vh - 136px)',
-        //backgroundImage: 'linear-gradient(to right, #000, #6a00ff)',
-        backgroundImage: 'linear-gradient(to right, #1c1c1c, #6a00ff, #87ceeb)',
-        //backgroundImage: 'linear-gradient(to right, #8a2be2, #6a00ff, #1e90ff)',
+        backgroundImage: 'url(syzn.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         color: 'white',
         p: 4
       }}
     >
       <Container maxWidth="lg">
-        <Grid container columns={9} wrap="nowrap" alignItems="center" sx={{ minHeight: 'calc(100vh - 230px)' }}>
+        <Grid container columns={9} wrap="nowrap" alignItems="flex-start" sx={{ minHeight: 'calc(100vh - 230px)', paddingTop: '3vh' }}>
           <Grid md={7} lg={6}>
             <Stack>
                 <Typography variant="h1" sx={{ fontSize: '4rem', color: '#fff', lineHeight: 1.5 }}>
@@ -28,21 +28,14 @@ const BaseIndex = () => {
               </Typography>
             </Stack>
             <br></br>
-            <Grid container columns={12} justifyContent="flex-end">
-              <Typography sx={{ fontSize: '1.1rem', color: '#', lineHeight: 1.5 }}>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li>1、便捷的 apikey 管理，透明的用量仪表盘</li>
-                  <li>2、支持 OpenAI、Claude、Gemini、文心一言、通义千问、智谱GLM、讯飞星火等众多大语言模型</li>
-                  <li>3、支持 Midjourney 绘画、Suno 音乐、AI视频 等众多多模态模型</li>
-                  <li>4、集成了多款主流 AI 工具，总有一款适合你！</li>
-                  <li>5、支持多种登录方式，安全、稳定、可靠！</li>
-                </ul>
-              </Typography>
-            </Grid>
-            <Typography variant="h4" sx={{ fontSize: '1.5rem', color: '#ffff00', lineHeight: 1.5 }}>
-                {t('携手深渊智能，遨游AI宇宙，汇聚万象星河，让 AI 九九归一！')}
+            <Typography variant="h4" sx={{ fontSize: '1.4rem', color: '#ffff00', lineHeight: 1.5 }}>
+                {t('携手深渊智能AIGC，聚合多种模型，驶入前沿科技，让AI助你一臂之力！')}
             </Typography>
-            <br></br>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <br></br><br></br><br></br><br></br>
+            
             <Stack spacing={3} direction="row">
               <Button
                   startIcon={<Link />}
