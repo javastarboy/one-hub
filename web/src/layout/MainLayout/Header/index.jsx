@@ -16,12 +16,14 @@ import I18nButton from 'ui-component/i18nButton';
 import NoticeButton from '../../../ui-component/NoticeButton';
 
 // assets
+import { IconMenu2 } from '@tabler/icons-react';
 // import { Icon } from '@iconify/react';
 
 // ==============================|| MAIN NAVBAR / HEADER ||============================== //
 
 const Header = ({ handleLeftDrawerToggle }) => {
   const theme = useTheme();
+  const { t } = useTranslation();
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
 
   return (
