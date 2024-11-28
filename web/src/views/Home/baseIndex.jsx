@@ -69,10 +69,10 @@ const BaseIndex = () => {
               <Button
                 startIcon={<Class />}
                 variant="contained"
-                href="https://www.yuque.com/shenyuanzhinengaigc/atz69s/rdx40dty7pkzx297" target='_blank'
+                href="https://www.yuque.com/shenyuanzhinengaigc/atz69s/uabc1f5yuyobqcus" target='_blank'
                 sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
               >
-                AIGC证书
+                🎉 国内外AI大语言模型API价格对比
               </Button>
             </Stack>
           </Grid>
