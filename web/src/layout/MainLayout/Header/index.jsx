@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import { Icon } from '@iconify/react';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -11,15 +13,16 @@ import LogoSection from '../LogoSection';
 import ProfileSection from './ProfileSection';
 import ThemeButton from 'ui-component/ThemeButton';
 import I18nButton from 'ui-component/i18nButton';
+import NoticeButton from '../../../ui-component/NoticeButton';
 
 // assets
-import { IconMenu2 } from '@tabler/icons-react';
+// import { Icon } from '@iconify/react';
 
 // ==============================|| MAIN NAVBAR / HEADER ||============================== //
 
 const Header = ({ handleLeftDrawerToggle }) => {
   const theme = useTheme();
-  const { t } = useTranslation();
+  const [isDrawerOpen, setIsDrawerOpen] = useState(true);
 
   return (
     <>
@@ -36,24 +39,33 @@ const Header = ({ handleLeftDrawerToggle }) => {
         <Box component="span" sx={{ display: { xs: 'none', md: 'block' }, flexGrow: 1 }}>
           <LogoSection />
         </Box>
-        <ButtonBase sx={{ borderRadius: '12px', overflow: 'hidden' }}>
-          <Avatar
-            variant="rounded"
-            sx={{
-              ...theme.typography.commonAvatar,
-              ...theme.typography.mediumAvatar,
-              ...theme.typography.menuButton,
-              transition: 'all .2s ease-in-out',
-              '&:hover': {
-                background: `${theme.palette.primary.main}!important`,
-                color: theme.palette.primary.light
-              }
+        <ButtonBase
+          sx={{
+            width: '36px',
+            height: '36px',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'all 0.2s ease-in-out',
+            '&:hover': {
+              backgroundColor: theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.04)'
+            }
+          }}
+          onClick={() => {
+            setIsDrawerOpen(!isDrawerOpen);
+            handleLeftDrawerToggle();
+          }}
+        >
+          <Icon
+            icon={isDrawerOpen ? 'material-symbols:menu-open' : 'material-symbols:menu'}
+            width="20px"
+            color={theme.palette.mode === 'dark' ? '#ffffff' : '#000000'}
+            style={{
+              opacity: theme.palette.mode === 'dark' ? 0.9 : 0.7,
+              transition: 'transform 0.2s ease-in-out'
             }}
-            onClick={handleLeftDrawerToggle}
-            color="inherit"
-          >
-            <IconMenu2 stroke={1.5} size="1.3rem" />
-          </Avatar>
+          />
         </ButtonBase>
       </Box>
 
@@ -66,6 +78,7 @@ const Header = ({ handleLeftDrawerToggle }) => {
       <Button component={Link} to="/about" color="inherit">
         {t('menu.about')}
       </Button>
+      <NoticeButton />
       <ThemeButton />
       <I18nButton />
       <ProfileSection />
