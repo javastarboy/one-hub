@@ -9,7 +9,7 @@ const BaseIndex = () => {
     <Box
       sx={{
         minHeight: 'calc(100vh - 136px)',
-        backgroundImage: 'url(syzn.png)',
+        backgroundImage: 'url(syzn_v2.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: 'white',
