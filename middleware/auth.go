@@ -66,6 +66,30 @@ func authHelper(c *gin.Context, minRole int) {
 	c.Next()
 }
 
+func TrySetUserBySession() func(c *gin.Context) {
+	return func(c *gin.Context) {
+		session := sessions.Default(c)
+		id := session.Get("id")
+		if id == nil {
+			c.Next()
+			return
+		}
+
+		idInt, ok := id.(int)
+		if !ok {
+			c.Next()
+			return
+		}
+
+		c.Set("id", idInt)
+		userGroup, err := model.CacheGetUserGroup(idInt)
+		if err == nil {
+			c.Set("group", userGroup)
+		}
+		c.Next()
+	}
+}
+
 func UserAuth() func(c *gin.Context) {
 	return func(c *gin.Context) {
 		authHelper(c, config.RoleCommonUser)
@@ -105,7 +129,6 @@ func tokenAuth(c *gin.Context, key string) {
 	c.Set("token_id", token.Id)
 	c.Set("token_name", token.Name)
 	c.Set("token_group", token.Group)
-	c.Set("chat_cache", token.ChatCache)
 	if len(parts) > 1 {
 		if model.IsAdmin(token.UserId) {
 			if strings.HasPrefix(parts[1], "!") {

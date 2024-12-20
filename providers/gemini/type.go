@@ -277,6 +277,7 @@ func (g *GeminiChatResponse) GetResponseText() string {
 func OpenAIToGeminiChatContent(openaiContents []types.ChatCompletionMessage) ([]GeminiChatContent, *types.OpenAIErrorWithStatusCode) {
 	contents := make([]GeminiChatContent, 0)
 	useToolName := ""
+
 	for _, openaiContent := range openaiContents {
 		content := GeminiChatContent{
 			Role:  ConvertRole(openaiContent.Role),
@@ -284,18 +285,35 @@ func OpenAIToGeminiChatContent(openaiContents []types.ChatCompletionMessage) ([]
 		}
 		content.Role = ConvertRole(openaiContent.Role)
 		if openaiContent.ToolCalls != nil || openaiContent.FunctionCall != nil {
+			argeStr := ""
 			if openaiContent.ToolCalls != nil {
 				useToolName = openaiContent.ToolCalls[0].Function.Name
+				if openaiContent.ToolCalls[0].Function.Arguments != "" {
+					argeStr = openaiContent.ToolCalls[0].Function.Arguments
+				}
 			} else {
 				useToolName = openaiContent.FunctionCall.Name
+				if openaiContent.FunctionCall.Arguments != "" {
+					argeStr = openaiContent.FunctionCall.Arguments
+				}
 			}
+			arge := map[string]interface{}{}
+			if argeStr != "" {
+				json.Unmarshal([]byte(argeStr), &arge)
+			}
+
+			text := openaiContent.StringContent()
+			if text != "" {
+				contents = append(contents, createSystemResponse(text))
+			}
+
 			content = GeminiChatContent{
 				Role: "model",
 				Parts: []GeminiPart{
 					{
 						FunctionCall: &GeminiFunctionCall{
 							Name: useToolName,
-							Args: map[string]interface{}{},
+							Args: arge,
 						},
 					},
 				},
@@ -346,19 +364,23 @@ func OpenAIToGeminiChatContent(openaiContents []types.ChatCompletionMessage) ([]
 		}
 		contents = append(contents, content)
 		if openaiContent.Role == types.ChatMessageRoleSystem {
-			contents = append(contents, GeminiChatContent{
-				Role: "model",
-				Parts: []GeminiPart{
-					{
-						Text: "Okay",
-					},
-				},
-			})
+			contents = append(contents, createSystemResponse("Okay"))
 		}
 
 	}
 
 	return contents, nil
+}
+
+func createSystemResponse(text string) GeminiChatContent {
+	return GeminiChatContent{
+		Role: "model",
+		Parts: []GeminiPart{
+			{
+				Text: text,
+			},
+		},
+	}
 }
 
 type ModelListResponse struct {
@@ -387,3 +409,21 @@ func (e *GeminiErrorWithStatusCode) ToOpenAiError() *types.OpenAIErrorWithStatus
 		LocalError: e.LocalError,
 	}
 }
+
+type GeminiOpenaiUsage struct {
+	PromptTokens     int `json:"promptTokens"`
+	CompletionTokens int `json:"completionTokens"`
+	TotalTokens      int `json:"totalTokens"`
+}
+
+type GeminiOpenaiChatResponse struct {
+	types.ChatCompletionResponse
+	Usage *GeminiOpenaiUsage `json:"usage,omitempty"`
+}
+
+type GeminiOpenaiChatStreamResponse struct {
+	types.ChatCompletionStreamResponse
+	Usage *GeminiOpenaiUsage `json:"usage,omitempty"`
+}
+
+type GeminiOpenaiError []GeminiErrorResponse
