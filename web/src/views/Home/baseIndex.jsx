@@ -47,10 +47,10 @@ const BaseIndex = () => {
               <Button
                   startIcon={<Link />}
                   variant="contained"
-                  href="https://www.yuque.com/lhyyh/ai/conactus" target='_blank'
+                  href="https://tools.lhagi.com/" target='_blank'
                   sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
                 >
-                  联系我们
+                  AI工具集导航
               </Button>
               <Button
                 startIcon={<Class />}
@@ -85,6 +85,14 @@ const BaseIndex = () => {
                 sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
               >
                 AIGC证书
+              </Button>
+              <Button
+                  startIcon={<Link />}
+                  variant="contained"
+                  href="https://www.yuque.com/lhyyh/ai/conactus" target='_blank'
+                  sx={{ backgroundColor: '#24292e', color: '#fff', width: 'fit-content', boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)' }}
+                >
+                  联系我们
               </Button>
             </Stack>
           </Grid>
