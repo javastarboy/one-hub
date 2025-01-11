@@ -16,6 +16,7 @@ const (
 
 const (
 	ChatMessageRoleSystem    = "system"
+	ChatMessageRoleDeveloper = "developer"
 	ChatMessageRoleUser      = "user"
 	ChatMessageRoleAssistant = "assistant"
 	ChatMessageRoleFunction  = "function"
@@ -132,6 +133,7 @@ func (m *ChatCompletionMessage) FuncToToolCalls() {
 	if m.FunctionCall != nil {
 		m.ToolCalls = []*ChatCompletionToolCalls{
 			{
+				Id:       m.FunctionCall.Name,
 				Type:     ChatMessageRoleFunction,
 				Function: m.FunctionCall,
 			},
@@ -153,6 +155,10 @@ func (m *ChatCompletionMessage) ToolToFuncCalls() {
 		}
 		m.ToolCalls = nil
 	}
+}
+
+func (m *ChatCompletionMessage) IsSystemRole() bool {
+	return m.Role == ChatMessageRoleSystem || m.Role == ChatMessageRoleDeveloper
 }
 
 type ChatMessageImageURL struct {

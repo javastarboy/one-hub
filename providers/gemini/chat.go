@@ -24,6 +24,8 @@ type GeminiStreamHandler struct {
 	LastCandidates int
 	LastType       string
 	Request        *types.ChatCompletionRequest
+
+	key string
 }
 
 type OpenAIStreamHandler struct {
@@ -94,6 +96,7 @@ func (p *GeminiProvider) CreateChatCompletion(request *types.ChatCompletionReque
 
 func (p *GeminiProvider) CreateChatCompletionStream(request *types.ChatCompletionRequest) (requester.StreamReaderInterface[string], *types.OpenAIErrorWithStatusCode) {
 
+	channel := p.GetChannel()
 	if p.UseOpenaiAPI {
 		streamOptions := request.StreamOptions
 		request.StreamOptions = &types.StreamOptions{
@@ -145,6 +148,8 @@ func (p *GeminiProvider) CreateChatCompletionStream(request *types.ChatCompletio
 		LastCandidates: 0,
 		LastType:       "",
 		Request:        request,
+
+		key: channel.Key,
 	}
 
 	return requester.RequestStream[string](p.Requester, resp, chatHandler.HandlerStream)
@@ -196,6 +201,10 @@ func ConvertFromChatOpenai(request *types.ChatCompletionRequest) (*GeminiChatReq
 				Category:  "HARM_CATEGORY_DANGEROUS_CONTENT",
 				Threshold: "BLOCK_NONE",
 			},
+			{
+				Category:  "HARM_CATEGORY_CIVIC_INTEGRITY",
+				Threshold: "BLOCK_NONE",
+			},
 		},
 		GenerationConfig: GeminiChatGenerationConfig{
 			Temperature:     request.Temperature,
@@ -220,9 +229,17 @@ func ConvertFromChatOpenai(request *types.ChatCompletionRequest) (*GeminiChatReq
 		geminiRequest.Tools = append(geminiRequest.Tools, geminiChatTools)
 	}
 
-	geminiContent, err := OpenAIToGeminiChatContent(request.Messages)
+	geminiContent, systemContent, err := OpenAIToGeminiChatContent(request.Messages)
 	if err != nil {
 		return nil, err
+	}
+
+	if systemContent != "" {
+		geminiRequest.SystemInstruction = &GeminiChatContent{
+			Parts: []GeminiPart{
+				{Text: systemContent},
+			},
+		}
 	}
 
 	geminiRequest.Contents = geminiContent
@@ -233,16 +250,12 @@ func ConvertFromChatOpenai(request *types.ChatCompletionRequest) (*GeminiChatReq
 		geminiRequest.GenerationConfig.ResponseMimeType = "application/json"
 
 		if request.ResponseFormat.JsonSchema != nil && request.ResponseFormat.JsonSchema.Schema != nil {
-			cleanedSchema := removeAdditionalProperties(request.ResponseFormat.JsonSchema.Schema)
+			cleanedSchema := removeAdditionalPropertiesWithDepth(request.ResponseFormat.JsonSchema.Schema, 0)
 			geminiRequest.GenerationConfig.ResponseSchema = cleanedSchema
 		}
 	}
 
 	return &geminiRequest, nil
-}
-
-func removeAdditionalProperties(schema interface{}) interface{} {
-	return removeAdditionalPropertiesWithDepth(schema, 0)
 }
 
 func removeAdditionalPropertiesWithDepth(schema interface{}, depth int) interface{} {
@@ -259,6 +272,8 @@ func removeAdditionalPropertiesWithDepth(schema interface{}, depth int) interfac
 	if typeVal, exists := v["type"]; !exists || (typeVal != "object" && typeVal != "array") {
 		return schema
 	}
+
+	delete(v, "title")
 
 	switch v["type"] {
 	case "object":
@@ -286,15 +301,6 @@ func removeAdditionalPropertiesWithDepth(schema interface{}, depth int) interfac
 }
 
 func ConvertToChatOpenai(provider base.ProviderInterface, response *GeminiChatResponse, request *types.ChatCompletionRequest) (openaiResponse *types.ChatCompletionResponse, errWithCode *types.OpenAIErrorWithStatusCode) {
-	aiError := errorHandle(&response.GeminiErrorResponse)
-	if aiError != nil {
-		errWithCode = &types.OpenAIErrorWithStatusCode{
-			OpenAIError: *aiError,
-			StatusCode:  http.StatusBadRequest,
-		}
-		return
-	}
-
 	openaiResponse = &types.ChatCompletionResponse{
 		ID:      fmt.Sprintf("chatcmpl-%s", utils.GetUUID()),
 		Object:  "chat.completion",
@@ -302,6 +308,12 @@ func ConvertToChatOpenai(provider base.ProviderInterface, response *GeminiChatRe
 		Model:   request.Model,
 		Choices: make([]types.ChatCompletionChoice, 0, len(response.Candidates)),
 	}
+
+	if len(response.Candidates) == 0 {
+		errWithCode = common.StringErrorWrapper("no candidates", "no_candidates", http.StatusInternalServerError)
+		return
+	}
+
 	for _, candidate := range response.Candidates {
 		openaiResponse.Choices = append(openaiResponse.Choices, candidate.ToOpenAIChoice(request))
 	}
@@ -331,7 +343,7 @@ func (h *GeminiStreamHandler) HandlerStream(rawLine *[]byte, dataChan chan strin
 		return
 	}
 
-	aiError := errorHandle(&geminiResponse.GeminiErrorResponse)
+	aiError := errorHandle(&geminiResponse.GeminiErrorResponse, h.key)
 	if aiError != nil {
 		errChan <- aiError
 		return
