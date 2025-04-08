@@ -139,7 +139,8 @@
     "unselectAll": "すべてを非選択にする",
     "updateEnabledBalance": "有効残高を更新",
     "usedBalance": "使用済み/残高",
-    "weight": "ウェイト"
+    "weight": "ウェイト",
+    "onlyTags": "タグのみ表示"
   },
   "channel_row": {
     "auto": "自動",
@@ -165,7 +166,38 @@
     "updateChannelBalance": "有効になっているすべてのチャンネルバランスが更新されました。",
     "updateOk": "アップデート完了！",
     "weightTip": "重みは 1 未満にはできません",
-    "check": "検出"
+    "check": "検出",
+    "batchAddIDRequired": "少なくとも1つのチャネルを選択してください",
+    "batchDelete": "一括削除",
+    "batchDeleteConfirm": "選択された {{count}} 個のチャネルを削除しますか？この操作は取り消せません。",
+    "batchDeleteError": "一括削除に失敗しました：{{message}}",
+    "batchDeleteErrorTip": "一括削除エラー：{{message}}",
+    "batchDeleteSuccess": "一括削除しました！",
+    "batchDeleteTip": "選択したチャネルを一括削除しますか？",
+    "deleteTag": "タグを削除します。",
+    "deleteTagAndChannels": "タグとそのすべてのチャネルを削除します。",
+    "deleteTagConfirm": "タグ {{tag}} およびそのすべてのチャネルを削除してもよろしいですか？この操作は取り消せません。",
+    "deleteTagError": "タグの削除に失敗しました：{{message}}",
+    "deleteTagSuccess": "タグ {{tag}} が削除されました",
+    "disable": "無効",
+    "disableAllChannels": "すべてのチャネルを無効にする",
+    "disableTagChannels": "タグチャネルを無効にする",
+    "enable": "有効",
+    "enableAllChannels": "すべてのチャネルを有効にする",
+    "enableTagChannels": "タグチャネルを有効にする",
+    "getTagChannelsError": "タグチャネルの取得に失敗しました：{{message}}",
+    "getTagChannelsErrorTip": "タグチャネルの取得中にエラーが発生しました：{{message}}",
+    "noTagChannels": "タグチャネルが見つかりません",
+    "priorityUpdateError": "優先度の更新に失敗しました：{{message}}",
+    "priorityUpdateSuccess": "優先度が更新されました",
+    "refreshList": "リストを更新する",
+    "tag": "タグ",
+    "tagChannelList": "タグチャネルリスト",
+    "tagChannelsConfirm": "すべてのチャネルで{{action}}タグ{{tag}}を確認しますか？",
+    "tagChannelsError": "アクション{{action}}のラベルチャネルが失敗しました: {{message}}",
+    "tagChannelsSuccess": "タグチャネル{{action}}が成功しました",
+    "weightUpdateError": "重みの更新に失敗しました：{{message}}",
+    "weightUpdateSuccess": "重みが更新されました"
   },
   "common": {
     "again": "再試行 ({{count}})",
@@ -201,7 +233,9 @@
     "unableServer": "サーバーに正しく接続できません!",
     "unableServerTip": "新しいバージョンが利用可能です: {{version}}、ショートカット キー Shift F5 を使用してページを更新してください",
     "unknown": "未知",
-    "verificationCode": "検証コード"
+    "verificationCode": "検証コード",
+    "deleteError": "削除に失敗しました：{{message}}",
+    "deleteSuccess": "削除しました！"
   },
   "dashboard": "ダッシュボード",
   "dashboard_index": {
@@ -249,6 +283,9 @@
   "logPage": {
     "cachedTokens": "Cache Tokens",
     "channelLabel": "チャネル",
+    "columnSettings": "列設定",
+    "selectColumns": "列を選択",
+    "columnSelectAll": "すべて選択",
     "detailLabel": "詳細",
     "durationLabel": "時間",
     "durationTooltip": "t/s: 出力トークンの数を総生成時間で割った値であり、生成速度を示します。",
@@ -271,6 +308,7 @@
     "totalOutputTokens": "Total output tokens",
     "typeLabel": "タイプ",
     "userLabel": "ユーザー",
+    "sourceIp": "Source IP",
     "content": {
       "calculate_steps": "計算手順:",
       "calculate_steps_tip": "PS：このシステムはポイントに基づいて計算され、すべての金額はポイント換算であり、1ポイント＝$0.000002です。最低消費額は1ポイントであり、この計算手順は参考用として提供されます。実際の料金が優先されます。",
@@ -281,7 +319,10 @@
       "original_output_price": "元の出力価格：${{ price }}/M",
       "original_times_price": "元の価格：${{ times }} / 回",
       "output_price": "出力: ${{ price }} /M",
-      "times_price": "${{ times }} / 回"
+      "times_price": "${{ times }} / 回",
+      "free": "無料",
+      "old_log": "旧バージョンのログ",
+      "illustrate": "* この記録はシステムアップグレード前のログであり"
     },
     "cachedReadTokens": "キャッシュからトークンを読み取ります（* {{ ratio }} )",
     "cachedWriteTokens": "トークンのキャッシュ書き込み（* {{ ratio }} ）"
@@ -603,6 +644,10 @@
         "topUpLink": {
           "label": "チャージリンク",
           "placeholder": "例えば、カード発行ウェブサイトの購入リンク"
+        },
+        "retryTimeOut": {
+          "label": "再試行のタイムアウト時間（秒）",
+          "placeholder": "再試行のタイムアウト時間（秒）"
         }
       },
       "logSettings": {
@@ -641,7 +686,9 @@
         },
         "mjNotify": "Midjourneyはコールバックを許可します（サーバーのIPアドレスが漏洩する可能性があります）",
         "saveButton": "その他の設定を保存",
-        "title": "その他の設定"
+        "title": "その他の設定",
+        "claudeAPIEnabled": "Claude APIを有効にしますか？",
+        "geminiAPIEnabled": "Gemini APIを有効にしますか？"
       },
       "paymentSettings": {
         "alert": "支払い設定： <br />1. USD為替レート：リチャージ金額のUSD金額を計算するために使用されます <br />2. 最低リチャージ金額（USD）：最低リチャージ金額、単位はUSD、整数を入力してください <br />3. ページはすべてUSD単位で計算され、ユーザーが支払う実際の通貨は支払いゲートウェイに設定された通貨に応じて変換されます <br />例：Aゲートウェイが通貨をCNYに設定すると、ユーザーは100USDを支払い、実際の支払金額は100 * USD為替レートになります <br />Bゲートウェイが通貨をUSDに設定すると、ユーザーは100USDを支払い、実際の支払金額は100USDになります",
@@ -694,6 +741,11 @@
         "info": "オーディオ倍率を設定します。JSON形式で、キーはモデル名であり、値は入力および出力のオーディオトークンの倍率です。例：{\"gpt-4o-audio-preview\":{\"input_audio_tokens_ratio\":40,\"output_audio_tokens_ratio\":20},\"gpt-4o-mini-audio-preview\":{\"input_audio_tokens_ratio\":67,\"output_audio_tokens_ratio\":34}}",
         "save": "オーディオトークン設定を保存します",
         "title": "オーディオトークンの設定"
+      },
+      "disableChannelKeywordsSettings": {
+        "info": "キーワードを1行ずつ入力して、禁止ワードリストを設定してください。",
+        "save": "無効なチャネルキーワード設定を保存します",
+        "title": "チャネルキーワード設定を無効にする"
       }
     },
     "otherSettings": {
@@ -861,7 +913,8 @@
     "taskIdPlaceholder": "タスクID",
     "tokenName": "トークン名",
     "type": "タイプ",
-    "username": "ユーザー名"
+    "username": "ユーザー名",
+    "sourceIp": "Source IP"
   },
   "task": "非同期タスク",
   "taskPage": {
@@ -1050,7 +1103,6 @@
   "使用代码执行功能，开启后，计算tokens不准确，建议个人使用开启": "コード実行機能を使用する場合、オンにするとトークンの計算が不正確になるため、個人で使用することを推奨します。",
   "使用网页搜索功能，对用户输入的内容进行搜索": "Web検索機能を使用して、ユーザーが入力したコンテンツを検索します。",
   "其他参数": "その他のパラメータ",
-  "单独设置代理地址，支持http和socks5，例如：http://127.0.0.1:1080": "プロキシ アドレスを個別に設定し、http と Socks5 をサポートします。例: http://127.0.0.1:1080",
   "可空，请输入中转API地址，例如通过cloudflare中转": "空のままにすることもできます。たとえば、cloudflare 転送を通じて転送 API アドレスを入力してください。",
   "启用": "有効にする",
   "地址填写Suno-API部署的地址": "アドレス: Suno-API デプロイメントのアドレスを入力します。",
@@ -1130,5 +1182,11 @@
     "nameTip": "チャネル名",
     "title": "モデルの帰属"
   },
-  "price": "価格"
+  "price": "価格",
+  "模型映射关系：例如用户请求A模型，实际转发给渠道的模型为B。在B模型加前缀+，表示使用传入模型计费，例如：+gpt-3": {
+    "5-turbo": "モデルマッピング関係：例えば、ユーザーがAモデルをリクエストした場合、実際にチャンネルに転送されるのはBモデルです。 Bモデルにプレフィックス+を付けて、入力されたモデルを使用して課金することを示します。 例：+gpt-3.5-turbo"
+  },
+  "单独设置代理地址，支持http和socks5，例如：http://127[0][0]": {
+    "1:1080,代理地址中可以通过 `%s` 作为会话标识占位符，程序中检测到有占位符会根据Key生成唯一会话标识符进行替换": "単独のプロキシアドレスを設定し、httpおよびsocks5をサポートします。例：http://127.0.0.1:1080。プロキシアドレスには`％s`をセッション識別子のプレースホルダとして使用できます。プログラムがプレースホルダを検出すると、Keyに基づいて一意のセッション識別子を生成して置換します。"
+  }
 }

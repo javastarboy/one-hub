@@ -44,7 +44,14 @@ func (r *relayChat) setRequest() error {
 		return errors.New("the 'stream_options' parameter is only allowed when 'stream' is enabled")
 	}
 
-	r.originalModel = r.chatRequest.Model
+	r.setOriginalModel(r.chatRequest.Model)
+
+	otherArg := r.getOtherArg()
+
+	if otherArg == "search" {
+		handleSearch(r.c, &r.chatRequest)
+		return nil
+	}
 
 	return nil
 }

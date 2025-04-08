@@ -30,6 +30,7 @@ type ProviderConfig struct {
 	ModelList           string
 	Rerank              string
 	ChatRealtime        string
+	Responses           string
 }
 
 func (pc *ProviderConfig) SetAPIUri(customMapping map[string]interface{}) {
@@ -44,6 +45,7 @@ func (pc *ProviderConfig) SetAPIUri(customMapping map[string]interface{}) {
 		config.RelayModeImagesGenerations:  &pc.ImagesGenerations,
 		config.RelayModeImagesEdits:        &pc.ImagesEdit,
 		config.RelayModeImagesVariations:   &pc.ImagesVariations,
+		config.RelayModeResponses:          &pc.Responses,
 	}
 
 	for key, value := range customMapping {
@@ -74,6 +76,7 @@ type BaseProvider struct {
 	Context       *gin.Context
 	Channel       *model.Channel
 	Requester     *requester.HTTPRequester
+	OtherArg      string
 }
 
 // 获取基础URL
@@ -186,6 +189,8 @@ func (p *BaseProvider) GetAPIUri(relayMode int) string {
 		return p.Config.Rerank
 	case config.RelayModeChatRealtime:
 		return p.Config.ChatRealtime
+	case config.RelayModeResponses:
+		return p.Config.Responses
 	default:
 		return ""
 	}
@@ -203,4 +208,12 @@ func (p *BaseProvider) GetSupportedAPIUri(relayMode int) (url string, err *types
 
 func (p *BaseProvider) GetRequester() *requester.HTTPRequester {
 	return p.Requester
+}
+
+func (p *BaseProvider) GetOtherArg() string {
+	return p.OtherArg
+}
+
+func (p *BaseProvider) SetOtherArg(otherArg string) {
+	p.OtherArg = otherArg
 }

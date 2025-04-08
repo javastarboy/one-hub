@@ -50,9 +50,10 @@ func (r *relayGeminiOnly) setRequest() error {
 	if err := common.UnmarshalBodyReusable(r.c, r.geminiRequest); err != nil {
 		return err
 	}
+	r.geminiRequest.SetJsonRaw(r.c)
 	r.geminiRequest.Model = modelList[0]
 	r.geminiRequest.Stream = isStream
-	r.originalModel = r.geminiRequest.Model
+	r.setOriginalModel(r.geminiRequest.Model)
 
 	return nil
 }
@@ -110,7 +111,7 @@ func (r *relayGeminiOnly) send() (err *types.OpenAIErrorWithStatusCode, done boo
 func (r *relayGeminiOnly) HandleError(err *types.OpenAIErrorWithStatusCode) {
 	newErr := FilterOpenAIErr(r.c, err)
 
-	geminiErr := gemini.OpenaiErrToGeminiErr(err)
+	geminiErr := gemini.OpenaiErrToGeminiErr(&newErr)
 
 	r.c.JSON(newErr.StatusCode, geminiErr.GeminiErrorResponse)
 }
